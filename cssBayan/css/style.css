@@ -2,7 +2,11 @@
   --font-common: "Helvetica", "Arial", sans-serif;
   --mobile: 320px;
   --tablet: 820px;
-  --desktop: 1920px;
+  --desktop: 1920px; 
+  --main-color: #27088c;
+  --second-color: #515151;
+  --background-color: #e9f2f6;
+  --border-color: rgba(182, 187, 189, 0.4);
 }
 
 *, *::before, *::after {
@@ -23,7 +27,7 @@ body {
   padding: 0;
   font-family: var(--font-common);
   font-weight: normal;
-  color: #515151;
+  color: var(--main-color);
 }
 
 a {
@@ -58,8 +62,8 @@ a {
 
 .accordion__item {
   padding: 0;
-  background-color: #e9f2f6;
-  border: 0.06rem solid #b6bbbd;
+  background-color: var(--background-color);
+  border: 0.06rem solid var(--border-color);
 }
 
 .accordion__label {
@@ -69,13 +73,13 @@ a {
   width: 100%;
   padding: 1.2rem;
   font-size: 0.73rem;
-  color: #515151;
+  color: var(--main-color);
   cursor: pointer;
 }
 
 .accordion__label:active {
   opacity: 0.7;
-  color: #27088c;
+  color: var(--second-color);
 }
 
 .accordion__text {
@@ -83,7 +87,7 @@ a {
 }
 
 .accordion__input:checked + .accordion__text {
-  color: #27088c;
+  color: var(--second-color);
 }
 
 .accordion__input {
@@ -96,6 +100,12 @@ a {
   max-width: 22rem;
   height: auto;
   padding-top: 1rem;
+}
+
+.accordion__input:checked ~ .accordion__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .accordion__input:not(:checked) ~ .accordion__icon-minus {
@@ -114,7 +124,7 @@ a {
 
 @media (hover: hover) {
   .accordion__label:hover > .accordion__input:not(:checked)  ~ .accordion__image {
-    animation-duration: 0.5s;
+    animation-duration: 0.8s;
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
@@ -124,7 +134,7 @@ a {
   @keyframes fadeIn {
     from {
       opacity: 0;
-      filter: blur(0.5rem);
+      filter: blur(0.6rem);
     }
   
     to {
@@ -134,10 +144,9 @@ a {
   }
 
   .accordion__list:hover .accordion__input:checked + .accordion__text {
-    color: #515151;
+    color: var(--main-color);
   }
 
-  .accordion__input:checked ~ .accordion__image,
   .accordion__input:not(:checked):hover ~ .accordion__image {
     display: flex;
     justify-content: center;
