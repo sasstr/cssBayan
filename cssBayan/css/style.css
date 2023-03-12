@@ -1,8 +1,5 @@
 :root {
   --font-common: "Helvetica", "Arial", sans-serif;
-  --mobile: 320px;
-  --tablet: 820px;
-  --desktop: 1920px; 
   --main-color: #27088c;
   --second-color: #515151;
   --background-color: #e9f2f6;
@@ -106,7 +103,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation-duration: 0.8s;
+  animation-duration: 0.5s;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
@@ -160,8 +157,8 @@ a {
     }
   }
 
-  .accordion__list:hover .accordion__input:checked + .accordion__text {
-    color: var(--main-color);
+  .accordion__list:hover .accordion__input:not(:checked) + .accordion__text {
+    color: var(--second-color);
   }
 
   .accordion__input:not(:checked):hover ~ .accordion__image {
